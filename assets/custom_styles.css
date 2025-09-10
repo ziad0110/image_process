@@ -1,0 +1,890 @@
+/* ملف الأنماط المخصصة لتطبيق معالجة الصور */
+
+/* متغيرات الألوان */
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --warning-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --error-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --text-light: #718096;
+    
+    --bg-light: #f7fafc;
+    --bg-white: #7fade9;
+    --border-light: #78adf3;
+    
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+    --shadow-xl: 0 20px 25px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.04);
+    
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 15px;
+    --radius-xl: 20px;
+    
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* إعدادات عامة */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+/* تحسين الحاوي الرئيسي */
+.main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* تحسين الأزرار */
+.stButton > button {
+    background: var(--primary-gradient);
+    color: rgb(81, 130, 188);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.stButton > button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.stButton > button:hover:before {
+    left: 100%;
+}
+
+/* أزرار ثانوية */
+.secondary-button {
+    background: var(--secondary-gradient) !important;
+}
+
+.success-button {
+    background: var(--success-gradient) !important;
+}
+
+.warning-button {
+    background: var(--warning-gradient) !important;
+}
+
+.error-button {
+    background: var(--error-gradient) !important;
+}
+
+/* تحسين المنزلقات */
+.stSlider > div > div {
+    border-radius: var(--radius-md);
+}
+
+.stSlider > div > div > div > div {
+    background: var(--primary-gradient);
+    border-radius: var(--radius-md);
+    height: 8px;
+}
+
+.stSlider > div > div > div > div > div {
+    background: rgb(255, 255, 255);
+    border: 3px solid #667eea;
+    box-shadow: var(--shadow-md);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: all var(--transition-normal);
+}
+
+.stSlider > div > div > div > div > div:hover {
+    transform: scale(1.2);
+    box-shadow: var(--shadow-lg);
+}
+
+/* تحسين القوائم المنسدلة */
+.stSelectbox > div > div {
+    border-radius: var(--radius-md);
+    border: 2px solid var(--border-light);
+    transition: all var(--transition-normal);
+    background: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.stSelectbox > div > div:focus-within {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+}
+
+/* تحسين حقول الإدخال */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea {
+    border-radius: var(--radius-md);
+    border: 2px solid var(--border-light);
+    transition: all var(--transition-normal);
+    padding: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    outline: none;
+}
+
+/* تحسين مربعات الاختيار */
+.stCheckbox > label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-normal);
+}
+
+.stCheckbox > label:hover {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+/* بطاقات مخصصة */
+.custom-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-normal);
+    margin: 1rem 0;
+}
+
+.custom-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.custom-card.gradient-border {
+    position: relative;
+    background: var(--bg-white);
+    border: none;
+}
+
+.custom-card.gradient-border:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: var(--primary-gradient);
+    border-radius: var(--radius-lg);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+}
+
+/* بطاقات المقاييس */
+.metric-card {
+    background: var(--bg-white);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all var(--transition-normal);
+    border: 1px solid var(--border-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.metric-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary-gradient);
+}
+
+.metric-card .metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #667eea;
+    margin: 0.5rem 0;
+}
+
+.metric-card .metric-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* رسائل الحالة */
+.status-message {
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    margin: 1rem 0;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: slideInFromTop 0.5s ease-out;
+    box-shadow: var(--shadow-md);
+}
+
+.status-message.success {
+    background: var(--success-gradient);
+    color: white;
+}
+
+.status-message.warning {
+    background: var(--warning-gradient);
+    color: white;
+}
+
+.status-message.error {
+    background: var(--error-gradient);
+    color: white;
+}
+
+.status-message.info {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.status-message .icon {
+    font-size: 1.25rem;
+}
+
+/* شريط التقدم المخصص */
+.custom-progress {
+    background: var(--border-light);
+    border-radius: var(--radius-md);
+    height: 12px;
+    overflow: hidden;
+    position: relative;
+    margin: 1rem 0;
+}
+
+.custom-progress .progress-bar {
+    height: 100%;
+    background: var(--primary-gradient);
+    border-radius: var(--radius-md);
+    transition: width var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-progress .progress-bar:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 50px 50px;
+    animation: move 2s linear infinite;
+}
+
+/* مؤشرات الخطوات */
+.step-indicator {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: var(--radius-md);
+    background: var(--bg-light);
+    border-left: 4px solid #667eea;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.step-indicator:hover {
+    background: rgba(102, 126, 234, 0.05);
+    transform: translateX(5px);
+}
+
+.step-indicator.active {
+    background: rgba(102, 126, 234, 0.1);
+    border-left-color: #764ba2;
+}
+
+.step-indicator.completed {
+    background: rgba(76, 175, 80, 0.1);
+    border-left-color: #4caf50;
+}
+
+.step-indicator .step-icon {
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.step-indicator .step-text {
+    flex: 1;
+    font-weight: 500;
+}
+
+/* تحسين الصور */
+.image-container {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.image-container:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+/* مقارنة الصور */
+.image-comparison {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin: 1rem 0;
+}
+
+.image-comparison .comparison-slider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: white;
+    cursor: ew-resize;
+    z-index: 10;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.image-comparison .slider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #667eea;
+}
+
+/* شبكة الإحصائيات */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.stat-item {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-item .stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* حاوي الكود */
+.code-container {
+    background: #2d3748;
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.code-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary-gradient);
+}
+
+.code-container pre {
+    color: #e2e8f0;
+    margin: 0;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.copy-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(10px);
+}
+
+.copy-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* تحسين الجداول */
+.stDataFrame {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+}
+
+.stDataFrame table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.stDataFrame th {
+    background: var(--primary-gradient);
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+    text-align: left;
+}
+
+.stDataFrame td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.stDataFrame tr:hover {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+/* تحسين الرسوم البيانية */
+.stPlotlyChart {
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+/* تحسين الشريط الجانبي */
+.sidebar .stSelectbox > div > div {
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+}
+
+.sidebar .stSlider {
+    padding: 0.5rem 0;
+}
+
+.sidebar .element-container {
+    margin-bottom: 1rem;
+}
+
+/* تحسين العناوين */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #667eea;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+/* تحسين الفقرات */
+p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* تحسين الروابط */
+a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+/* تحسين الإشعارات */
+.stAlert {
+    border-radius: var(--radius-md);
+    border: none;
+    box-shadow: var(--shadow-md);
+    margin: 1rem 0;
+}
+
+.stSuccess {
+    background: var(--success-gradient);
+    color: white;
+}
+
+.stWarning {
+    background: var(--warning-gradient);
+    color: white;
+}
+
+.stError {
+    background: var(--error-gradient);
+    color: white;
+}
+
+.stInfo {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+/* تأثيرات الحركة */
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: 200px 0;
+    }
+}
+
+/* فئات الحركة */
+.animate-slide-in-top {
+    animation: slideInFromTop 0.5s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slideInFromLeft 0.5s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInFromRight 0.5s ease-out;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* تحسينات الاستجابة */
+@media (max-width: 768px) {
+    .main {
+        padding: 0.5rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .metric-card {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .custom-card {
+        padding: 1rem;
+    }
+}
+
+/* تحسينات إضافية للوضع المظلم */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: #f7fafc;
+        --text-secondary: #e2e8f0;
+        --text-light: #cbd5e0;
+        --bg-light: #2d3748;
+        --bg-white: #1a202c;
+        --border-light: #4a5568;
+    }
+    
+    .custom-card {
+        background: var(--bg-white);
+        border-color: var(--border-light);
+    }
+    
+    .metric-card {
+        background: var(--bg-white);
+        border-color: var(--border-light);
+    }
+    
+    .code-container {
+        background: #1a202c;
+        border: 1px solid var(--border-light);
+    }
+}
+
+
+
+/* تحسين ألوان النص في الشريط الجانبي */
+.st-emotion-cache-vk32hr.e1fqkh3o1 {
+    color: var(--text-primary) !important; /* لضمان ظهور النص على الخلفية الفاتحة */
+}
+
+.st-emotion-cache-vk32hr.e1fqkh3o1 .st-emotion-cache-16txto3.e1nzilvr5 {
+    color: var(--text-primary) !important;
+}
+
+.st-emotion-cache-vk32hr.e1fqkh3o1 .st-emotion-cache-10q70x.e1nzilvr5 {
+    color: var(--text-primary) !important;
+}
+
+.st-emotion-cache-vk32hr.e1fqkh3o1 .st-emotion-cache-10q70x.e1nzilvr5 a {
+    color: var(--text-primary) !important;
+}
+
+.st-emotion-cache-vk32hr.e1fqkh3o1 .st-emotion-cache-10q70x.e1nzilvr5 a:hover {
+    color: var(--primary-gradient) !important;
+}
+
+/* تحسين لون النص في الروابط داخل الشريط الجانبي */
+.st-emotion-cache-vk32hr.e1fqkh3o1 a {
+    color: var(--text-primary) !important;
+}
+
+.st-emotion-cache-vk32hr.e1fqkh3o1 a:hover {
+    color: #667eea !important; /* لون التمييز عند التحويم */
+}
+
+/* التأكد من لون النص في عناصر القائمة الجانبية */
+.st-emotion-cache-1vk636q.e1fqkh3o1 {
+    color: var(--text-primary) !important;
+}
+
+.st-emotion-cache-1vk636q.e1fqkh3o1 a {
+    color: var(--text-primary) !important;
+}
+
+.st-emotion-cache-1vk636q.e1fqkh3o1 a:hover {
+    color: #667eea !important;
+}
+
+/* التأكد من لون النص في العناوين داخل الشريط الجانبي */
+.st-emotion-cache-1vk636q.e1fqkh3o1 h1, .st-emotion-cache-1vk636q.e1fqkh3o1 h2, .st-emotion-cache-1vk636q.e1fqkh3o1 h3, .st-emotion-cache-1vk636q.e1fqkh3o1 h4, .st-emotion-cache-1vk636q.e1fqkh3o1 h5, .st-emotion-cache-1vk636q.e1fqkh3o1 h6 {
+    color: var(--text-primary) !important;
+}
+
+/* التأكد من لون النص في الـ markdown داخل الشريط الجانبي */
+.st-emotion-cache-1vk636q.e1fqkh3o1 .stMarkdown {
+    color: var(--text-primary) !important;
+}
+
+/* التأكد من لون النص في عناصر الـ expander داخل الشريط الجانبي */
+.st-emotion-cache-1vk636q.e1fqkh3o1 .stExpander {
+    color: var(--text-primary) !important;
+}
+
+.st-emotion-cache-1vk636q.e1fqkh3o1 .stExpander > div > div > div > div > p {
+    color: var(--text-primary) !important;
+}
+
+/* التأكد من لون النص في الـ info box داخل الشريط الجانبي */
+.st-emotion-cache-1vk636q.e1fqkh3o1 .stAlert {
+    color: var(--text-primary) !important;
+}
+
+.st-emotion-cache-1vk636q.e1fqkh3o1 .stAlert > div > div > p {
+    color: var(--text-primary) !important;
+}
+
+/* التأكد من لون النص في الـ metric box داخل الشريط الجانبي */
+.st-emotion-cache-1vk636q.e1fqkh3o1 .stMetric {
+    color: var(--text-primary) !important;
+}
+
+.st-emotion-cache-1vk636q.e1fqkh3o1 .stMetric > div > div > div > div > div > p {
+    color: var(--text-primary) !important;
+}
+
+/* التأكد من لون النص في الـ selectbox داخل الشريط الجانبي */
+.st-emotion-cache-1vk636q.e1fqkh3o1 .stSelectbox {
+    color: var(--text-primary) !important;
+}
+

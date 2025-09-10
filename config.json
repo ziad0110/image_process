@@ -1,0 +1,147 @@
+{
+  "app_config": {
+    "title": "تطبيق معالجة الصور التفاعلي",
+    "version": "1.0.0",
+    "author": "فريق تطوير معالجة الصور",
+    "description": "تطبيق تعليمي شامل لتعلم أساسيات معالجة الصور الرقمية",
+    "language": "ar",
+    "theme": {
+      "primary_color": "#667eea",
+      "secondary_color": "#764ba2",
+      "background_color": "#ffffff",
+      "text_color": "#2d3748"
+    }
+  },
+  "streamlit_config": {
+    "page_title": "معالجة الصور التفاعلية",
+    "page_icon": "🎨",
+    "layout": "wide",
+    "initial_sidebar_state": "expanded",
+    "menu_items": {
+      "Get Help": "https://github.com/your-repo/issues",
+      "Report a bug": "https://github.com/your-repo/issues",
+      "About": "تطبيق تعليمي لمعالجة الصور باستخدام Python و OpenCV"
+    }
+  },
+  "performance": {
+    "max_image_size": 2048,
+    "cache_ttl": 3600,
+    "enable_caching": true,
+    "parallel_processing": true,
+    "memory_limit_mb": 512
+  },
+  "features": {
+    "enable_advanced_features": true,
+    "enable_code_export": true,
+    "enable_report_export": true,
+    "enable_batch_processing": false,
+    "enable_real_time_preview": true
+  },
+  "ui_settings": {
+    "show_progress_bars": true,
+    "show_processing_time": true,
+    "show_image_stats": true,
+    "enable_tooltips": true,
+    "enable_animations": true,
+    "sidebar_width": 300
+  },
+  "default_values": {
+    "brightness": 0,
+    "contrast": 0,
+    "blur_kernel_size": 5,
+    "canny_low_threshold": 50,
+    "canny_high_threshold": 150,
+    "morphology_kernel_size": 5
+  },
+  "supported_formats": {
+    "input": ["png", "jpg", "jpeg", "bmp", "tiff", "webp"],
+    "output": ["png", "jpg", "jpeg", "bmp", "tiff"]
+  },
+  "lectures": {
+    "1": {
+      "title": "مدخل ومعمارية الصور الرقمية",
+      "icon": "🖼️",
+      "difficulty": "beginner",
+      "estimated_time": 15,
+      "prerequisites": []
+    },
+    "2": {
+      "title": "أنظمة الألوان",
+      "icon": "🎨",
+      "difficulty": "beginner",
+      "estimated_time": 20,
+      "prerequisites": ["1"]
+    },
+    "3": {
+      "title": "العمليات على البكسل",
+      "icon": "✨",
+      "difficulty": "intermediate",
+      "estimated_time": 25,
+      "prerequisites": ["1", "2"]
+    },
+    "4": {
+      "title": "الفلاتر والالتفاف",
+      "icon": "🔍",
+      "difficulty": "intermediate",
+      "estimated_time": 30,
+      "prerequisites": ["1", "2", "3"]
+    },
+    "5": {
+      "title": "إزالة الضوضاء",
+      "icon": "🧹",
+      "difficulty": "intermediate",
+      "estimated_time": 25,
+      "prerequisites": ["1", "2", "3", "4"]
+    },
+    "6": {
+      "title": "كشف الحواف",
+      "icon": "📐",
+      "difficulty": "advanced",
+      "estimated_time": 30,
+      "prerequisites": ["1", "2", "3", "4"]
+    },
+    "7": {
+      "title": "العمليات المورفولوجية",
+      "icon": "🔬",
+      "difficulty": "advanced",
+      "estimated_time": 35,
+      "prerequisites": ["1", "2", "3", "6"]
+    },
+    "8": {
+      "title": "التحويلات الهندسية",
+      "icon": "🔄",
+      "difficulty": "advanced",
+      "estimated_time": 30,
+      "prerequisites": ["1", "2", "3"]
+    },
+    "9": {
+      "title": "المشروع الختامي",
+      "icon": "🎯",
+      "difficulty": "expert",
+      "estimated_time": 45,
+      "prerequisites": ["1", "2", "3", "4", "5", "6", "7", "8"]
+    }
+  },
+  "help_links": {
+    "opencv_docs": "https://docs.opencv.org/",
+    "numpy_docs": "https://numpy.org/doc/",
+    "matplotlib_docs": "https://matplotlib.org/stable/",
+    "streamlit_docs": "https://docs.streamlit.io/",
+    "python_imaging": "https://pillow.readthedocs.io/"
+  },
+  "keyboard_shortcuts": {
+    "save_image": "Ctrl+S",
+    "reset_settings": "Ctrl+R",
+    "toggle_preview": "Space",
+    "next_lecture": "Right Arrow",
+    "previous_lecture": "Left Arrow",
+    "show_help": "F1"
+  },
+  "analytics": {
+    "track_usage": false,
+    "track_performance": true,
+    "track_errors": true,
+    "session_timeout": 1800
+  }
+}
+

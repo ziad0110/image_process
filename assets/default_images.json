@@ -1,0 +1,111 @@
+{
+  "default_images": {
+    "portrait": {
+      "path": "assets/sample_portrait.png",
+      "description": "صورة شخصية احترافية مناسبة لتجربة عمليات معالجة الوجوه والتحسينات",
+      "use_cases": ["كشف الحواف", "تعديل السطوع والتباين", "تحويل الألوان", "إزالة الضوضاء"],
+      "dimensions": "portrait",
+      "complexity": "medium"
+    },
+    "landscape": {
+      "path": "assets/sample_landscape.png", 
+      "description": "منظر طبيعي خلاب مع جبال وبحيرة، مثالي لتجربة الفلاتر والتحويلات",
+      "use_cases": ["الفلاتر والالتفاف", "تحويل أنظمة الألوان", "التحويلات الهندسية", "تحليل الألوان"],
+      "dimensions": "landscape",
+      "complexity": "high"
+    },
+    "geometric": {
+      "path": "assets/sample_geometric.png",
+      "description": "أشكال هندسية ملونة مناسبة لتجربة كشف الحواف والعمليات المورفولوجية",
+      "use_cases": ["كشف الحواف", "العمليات المورفولوجية", "تحليل الأشكال", "التحويل الثنائي"],
+      "dimensions": "square",
+      "complexity": "low"
+    },
+    "texture": {
+      "path": "assets/sample_texture.png",
+      "description": "نسيج مفصل مع أنماط متنوعة، مثالي لتجربة إزالة الضوضاء والفلاتر",
+      "use_cases": ["إزالة الضوضاء", "الفلاتر المتقدمة", "تحليل النسيج", "تحسين الجودة"],
+      "dimensions": "square", 
+      "complexity": "high"
+    }
+  },
+  "lecture_recommendations": {
+    "1": ["portrait", "landscape"],
+    "2": ["landscape", "portrait", "geometric"],
+    "3": ["portrait", "geometric"],
+    "4": ["landscape", "texture"],
+    "5": ["texture", "portrait"],
+    "6": ["geometric", "landscape"],
+    "7": ["geometric", "texture"],
+    "8": ["landscape", "portrait"],
+    "9": ["all"]
+  },
+  "difficulty_levels": {
+    "beginner": ["geometric", "portrait"],
+    "intermediate": ["landscape", "texture"],
+    "advanced": ["texture", "landscape"]
+  },
+  "processing_examples": {
+    "color_conversion": {
+      "best_images": ["landscape", "portrait"],
+      "description": "الصور الملونة الغنية تُظهر تأثير تحويل الألوان بوضوح"
+    },
+    "edge_detection": {
+      "best_images": ["geometric", "landscape"],
+      "description": "الصور ذات الحواف الواضحة تُظهر نتائج كشف الحواف بشكل مثالي"
+    },
+    "noise_reduction": {
+      "best_images": ["texture", "portrait"],
+      "description": "الصور المفصلة تُظهر تأثير إزالة الضوضاء بوضوح"
+    },
+    "morphological_operations": {
+      "best_images": ["geometric"],
+      "description": "الأشكال الهندسية مثالية لفهم العمليات المورفولوجية"
+    },
+    "geometric_transforms": {
+      "best_images": ["landscape", "portrait"],
+      "description": "الصور الطبيعية تُظهر تأثير التحويلات الهندسية بوضوح"
+    }
+  },
+  "image_properties": {
+    "sample_portrait.png": {
+      "type": "photograph",
+      "subject": "human_face",
+      "lighting": "professional",
+      "contrast": "high",
+      "noise_level": "low",
+      "edge_density": "medium"
+    },
+    "sample_landscape.png": {
+      "type": "photograph", 
+      "subject": "nature",
+      "lighting": "natural",
+      "contrast": "medium",
+      "noise_level": "low",
+      "edge_density": "high"
+    },
+    "sample_geometric.png": {
+      "type": "digital_art",
+      "subject": "geometric_shapes",
+      "lighting": "uniform",
+      "contrast": "very_high",
+      "noise_level": "none",
+      "edge_density": "very_high"
+    },
+    "sample_texture.png": {
+      "type": "macro_photography",
+      "subject": "texture_pattern",
+      "lighting": "natural",
+      "contrast": "medium",
+      "noise_level": "medium",
+      "edge_density": "very_high"
+    }
+  },
+  "usage_tips": {
+    "beginners": "ابدأ بالصور الهندسية البسيطة لفهم المفاهيم الأساسية",
+    "intermediate": "استخدم الصور الطبيعية لرؤية التطبيقات العملية",
+    "advanced": "جرب الصور المعقدة لاختبار خوارزميات متقدمة",
+    "comparison": "استخدم نفس الصورة عبر محاضرات متعددة لمقارنة التقنيات"
+  }
+}
+
